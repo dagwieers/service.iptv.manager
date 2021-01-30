@@ -67,7 +67,7 @@ build: clean
 
 release:
 ifneq ($(release),)
-	@github_changelog_generator -u add-ons -p service.iptv.manager --no-issues --future-release v$(release);
+	@github_changelog_generator -u add-ons -p $(name) --no-issues --future-release v$(release);
 
 	@echo "cd /addon/@version\nset $$release\nsave\nbye" | xmllint --shell addon.xml; \
 	date=$(shell date '+%Y-%m-%d'); \
